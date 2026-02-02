@@ -1,6 +1,26 @@
-composer.phar
+# Vendor
 /vendor/
 
-# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-# composer.lock
+# IDE
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PHPUnit
+/coverage/
+/.phpunit.cache/
+
+# Composer
+/composer.lock
+
+# PHP CS Fixer
+/.php-cs-fixer.cache
+
+# PHPStan
+/phpstan.neon.dist
