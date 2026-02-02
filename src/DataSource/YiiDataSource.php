@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Iodani\ArcGIS\Server\DataSource;
 
+use Iodani\ArcGIS\Server\Contracts\DataSourceInterface;
+use Iodani\ArcGIS\Server\Contracts\ExtentCalculatorInterface;
 use RuntimeException;
 
 /**
