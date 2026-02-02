@@ -38,6 +38,19 @@ class PostGISDataSource implements DataSourceInterface
     }
 
     /**
+     * Get database connection
+     *
+     * Returns the underlying PDO connection for direct access
+     * (e.g., for quoting values, transactions, etc.)
+     *
+     * @return PDO Database connection
+     */
+    public function getDb(): PDO
+    {
+        return $this->pdo;
+    }
+
+    /**
      * {@inheritdoc}
      */
     public function query(string $table, array $params = []): array
