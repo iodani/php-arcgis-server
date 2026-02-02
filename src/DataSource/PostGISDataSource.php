@@ -103,6 +103,7 @@ class PostGISDataSource implements DataSourceInterface
             }
 
             $version = $stmt->fetchColumn();
+
             return !empty($version);
         } catch (\PDOException $e) {
             return false;
