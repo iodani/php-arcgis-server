@@ -35,4 +35,15 @@ interface DataSourceInterface
      * @return bool True if available
      */
     public function isAvailable(): bool;
+
+    /**
+     * Get underlying database connection
+     *
+     * Return type varies by implementation:
+     * - PostGISDataSource: PDO
+     * - YiiDataSource: CDbConnection
+     *
+     * @return mixed Database connection object
+     */
+    public function getDb();
 }

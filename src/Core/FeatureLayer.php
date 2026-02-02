@@ -227,9 +227,9 @@ abstract class FeatureLayer implements FeatureLayerInterface
      * Helper method to access the underlying database connection.
      * Use this instead of Yii::app()->dbRead for better testability.
      *
-     * @return CDbConnection Database connection
+     * @return mixed Database connection (PDO, CDbConnection, etc.)
      */
-    protected function getDb(): CDbConnection
+    protected function getDb()
     {
         return $this->dataSource->getDb();
     }

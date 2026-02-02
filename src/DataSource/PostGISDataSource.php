@@ -98,7 +98,12 @@ class PostGISDataSource implements DataSourceInterface
         try {
             $stmt = $this->pdo->query("SELECT PostGIS_Version()");
 
-            return !empty($stmt->fetchColumn());
+            if ($stmt === false) {
+                return false;
+            }
+
+            $version = $stmt->fetchColumn();
+            return !empty($version);
         } catch (\PDOException $e) {
             return false;
         }

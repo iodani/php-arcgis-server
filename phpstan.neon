@@ -4,4 +4,15 @@ parameters:
         - src
     excludePaths:
         - src/Examples
-    checkMissingIterableValueType: false
+        - src/DataSource/YiiDataSource.php  # Exclude Yii adapter (has Yii framework dependencies)
+
+    # Ignore missing Yii classes (not installed in package)
+    ignoreErrors:
+        # Yii Framework classes (only available when package is used with Yii)
+        - '#unknown class (Yii|CDbConnection|CLogger)#'
+        - '#Call to static method app\(\) on an unknown class Yii#'
+        - '#Call to method createCommand\(\) on an unknown class.*CDbConnection#'
+        - '#Access to constant LEVEL_WARNING on an unknown class.*CLogger#'
+
+        # PDOStatement can be false in some cases (handled in code)
+        - '#Cannot call method fetchColumn\(\) on PDOStatement\|false#'

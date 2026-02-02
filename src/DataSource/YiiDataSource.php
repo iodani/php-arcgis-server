@@ -324,9 +324,9 @@ class YiiDataSource implements DataSourceInterface, ExtentCalculatorInterface
     /**
      * Get the Yii database connection
      *
-     * @return CDbConnection
+     * @return mixed CDbConnection instance
      */
-    public function getDb(): CDbConnection
+    public function getDb()
     {
         return $this->db;
     }
